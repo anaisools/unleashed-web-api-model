@@ -7,6 +7,7 @@ required:
   - amount
   - status
   - amount_due
+  - type
 properties:
   id:
     type: string
@@ -36,3 +37,11 @@ properties:
   amount_due:
     type: number
     format: float
+  type:
+    type: string
+    enum:
+      - invoice
+      - credit_note
+  linked_invoice_id:
+    type: string
+    description: If the type is credit_note, this field can be used to link the invoice that it refers to.
